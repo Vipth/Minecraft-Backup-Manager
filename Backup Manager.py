@@ -17,7 +17,7 @@ os.system('color 0a')
 os.system(f'title {PROGRAM_TITLE}')
 
 # Checks to see if the backup folder exists. If not, it prompts to create it.
-def checkBackupFolder() -> None:
+def ensureBackupFolder() -> None:
     if not os.path.exists(BACKUP_FOLDER):
         os.system('cls')
         print("Backup folder not found.")
@@ -192,7 +192,7 @@ def main() -> None:
     os.system('cls')
     global exit
     while exit == False:
-        checkBackupFolder()
+        ensureBackupFolder()
         if exit == True: return
         print("What would you like to do?")
         print("1. Backup a world.")
