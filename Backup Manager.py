@@ -6,7 +6,7 @@ PROGRAM_TITLE = "Backup Manager"
 USERNAME = os.getlogin()
 MINECRAFT_FOLDER = f'C:/Users/{USERNAME}/AppData/Roaming/.minecraft'
 SAVES_FOLDER = f'{MINECRAFT_FOLDER}/saves'
-BACKUP_FOLDER = f'C:/Users/{USERNAME}/AppData/Roaming/.minecraft/Backup Manager'
+BACKUP_FOLDER = f'{MINECRAFT_FOLDER}/Backup Manager'
 EXIT = False
 
 # QOL
