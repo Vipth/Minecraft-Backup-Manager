@@ -7,7 +7,9 @@ USERNAME = os.getlogin()
 MINECRAFT_FOLDER = f'C:/Users/{USERNAME}/AppData/Roaming/.minecraft'
 SAVES_FOLDER = f'{MINECRAFT_FOLDER}/saves'
 BACKUP_FOLDER = f'{MINECRAFT_FOLDER}/Backup Manager'
-EXIT = False
+
+# Vars
+exit = False
 
 # QOL
 os.system('echo off')
@@ -31,8 +33,8 @@ def checkBackupFolder() -> None:
                 break
             elif choice == "2":
                 print("Exiting...")
-                global EXIT
-                EXIT = True
+                global exit
+                exit = True
                 return
             else:
                 print("Invalid choice.")
@@ -188,16 +190,16 @@ def restoreBackup() -> None:
 
 def main() -> None:
     os.system('cls')
-    global EXIT
-    while EXIT == False:
+    global exit
+    while exit == False:
         checkBackupFolder()
-        if EXIT == True: return
+        if exit == True: return
         print("What would you like to do?")
         print("1. Backup a world.")
         print("2. Restore a backup.")
         print("3. Delete a backup.")
         print(f"4. Delete {PROGRAM_TITLE} Folder.")
-        print("5. Exit.")
+        print("5. exit.")
         choice = input("Choice: ")
         if choice == "1":
             backupWorld()
@@ -208,7 +210,7 @@ def main() -> None:
         elif choice == "4":
             deleteBackupFolder()
         elif choice == "5":
-            EXIT = True
+            exit = True
         else:
             print("Invalid choice.")
 
